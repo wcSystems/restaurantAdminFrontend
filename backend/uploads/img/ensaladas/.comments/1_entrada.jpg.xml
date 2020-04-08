@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<comment version="3.0">
+  <caption>fresh vegetable salad </caption>
+  <note>fresh vegetable salad - healthy food</note>
+  <place/>
+  <categories>
+    <category value="appetizer"/>
+    <category value="arugula"/>
+    <category value="background"/>
+    <category value="bread"/>
+    <category value="cheese"/>
+    <category value="color"/>
+    <category value="cream"/>
+    <category value="diet"/>
+    <category value="dieting"/>
+    <category value="dinner"/>
+    <category value="dish"/>
+    <category value="food"/>
+    <category value="fresh"/>
+    <category value="freshness"/>
+    <category value="green"/>
+    <category value="health"/>
+    <category value="healthy"/>
+    <category value="leaf"/>
+    <category value="low-fat"/>
+    <category value="meal"/>
+    <category value="natural"/>
+    <category value="non-fat"/>
+    <category value="nutrition"/>
+    <category value="oil"/>
+    <category value="olive"/>
+    <category value="organic"/>
+    <category value="plate"/>
+    <category value="red"/>
+    <category value="roast"/>
+    <category value="rocket"/>
+    <category value="salad"/>
+    <category value="tomato"/>
+    <category value="tomatoes"/>
+    <category value="top"/>
+    <category value="vegetable"/>
+    <category value="vegetarian"/>
+    <category value="view"/>
+    <category value="wood"/>
+    <category value="wooden"/>
+  </categories>
+</comment>

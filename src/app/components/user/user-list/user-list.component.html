@@ -1,0 +1,89 @@
+<div>
+
+  <div id="panel-1" class="row panel">
+    <div class="panel-container show">
+      <div class="panel-content">
+        <button (click)="UserCreate()" class="btn btn-primary">
+          Nuevo Usuario
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div id="panel-1" class="panel col-sm-12">
+      <div class="panel-hdr mb-3">
+        <h2>
+          Usuarios
+
+          <span class="fw-300">
+            <i>/listado</i>
+          </span>
+        </h2>
+      </div>
+      <div class="panel-container show">
+        <div class="panel-content">
+          <table
+            id="dt-user_panel"
+            class="table table-bordered table-hover table-striped w-100"
+          >
+            <thead>
+              <tr>
+                <th class="center" style="width: 10%">Foto</th>
+                <th class="center" style="width: 20%">Nombre</th>
+                <th class="center" style="width: 20%">Apellido</th>
+                <th class="center" style="width: 30%">Email</th>
+                <th class="center" style="width: 10%">
+                  <i class="fal fa-pencil"></i>
+                </th>
+                <th class="center" style="width: 10%">
+                  <i class="fal fa-trash"></i>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let user of users; index as i">
+                <td class="center">
+                  <img
+                    class="img-responsive rounded-circle"
+                    height="50"
+                    width="50"
+                    [src]="user.img_profile"
+                  />
+                </td>
+                <td class="center">
+                  {{ user.firstname }}
+                </td>
+                <td class="center">
+                  {{ user.lastname }}
+                </td>
+                <td class="center">
+                  {{ user.email }}
+                </td>
+
+                <td class="center">
+                  <button
+                    (click)="UserEdit(i, user.id)"
+                    class="btn btn-secondary"
+                  >
+                    <i class="fal fa-edit"></i>
+                  </button>
+                </td>
+                <td class="center">
+                  <button
+                    class="btn btn-danger"
+                    (click)="openModal(template)"
+                  >
+                    <i class="fal fa-trash"></i>
+                  </button>
+                </td>
+                <ng-template #template class="modal-alert">
+                  <div class="modal-content"><div class="modal-header"><h5 class="modal-title">Eliminar a {{ user.firstname }} {{ user.lastname }}</h5><button (click)="modalRef.hide()"class="close"  type="button"><span aria-hidden="true"><i class="fal fa-times"></i></span></button></div><div class="modal-body"> Esta accion no se puede deshacer </div><div class="modal-footer"><button class="btn btn-secondary" (click)="modalRef.hide()" type="button"> Close </button><button (click)="userDelete(i, user.id)" class="btn btn-primary" type="button"> Continuar </button></div></div>
+                </ng-template>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

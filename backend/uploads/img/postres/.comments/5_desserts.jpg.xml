@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<comment version="3.0">
+  <caption>Lemon tart</caption>
+  <note>Lemon tart cakes in white plate</note>
+  <place/>
+  <categories>
+    <category value="background"/>
+    <category value="baked"/>
+    <category value="cake"/>
+    <category value="citron"/>
+    <category value="crust"/>
+    <category value="delicious"/>
+    <category value="dessert"/>
+    <category value="fancy"/>
+    <category value="food"/>
+    <category value="fresh"/>
+    <category value="isolated"/>
+    <category value="lemon"/>
+    <category value="pastry"/>
+    <category value="pie"/>
+    <category value="slice"/>
+    <category value="sugar"/>
+    <category value="sweet"/>
+    <category value="tart"/>
+    <category value="tarte"/>
+    <category value="tarts"/>
+    <category value="tasty"/>
+    <category value="treat"/>
+    <category value="white"/>
+    <category value="wood"/>
+    <category value="yellow"/>
+  </categories>
+</comment>

@@ -1,0 +1,39 @@
+
+
+<div>
+    <div id="panel-1" class="row panel">
+        <div class="panel-container show">
+            <div class="panel-content">
+                <button  *ngIf="table" type="button" class="btn btn-primary" (click)="newPurchaseOrder();table = false"   >
+                    <i class="fal fa-plus"></i>
+                </button>
+                <button  *ngIf="table === false" type="button" class="btn btn-primary" (click)="table = true"   >
+                    Atras
+                </button>
+
+            </div>
+        </div>
+    </div>
+    <div class="row" *ngIf="table">
+        <div id="panel-1" class="panel col-sm-12 ">
+          <div class="panel-hdr mb-3">
+            <h2>
+              Ordenes de compra
+              <span class="fw-300">
+                <i>/listado</i>
+              </span>
+            </h2>
+          </div>
+          <div class="panel-container show">
+            <div class="panel-content">
+              <table  datatable [dtOptions]="dtOptions" class="table table-bordered table-hover table-striped w-100">
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    <div class="row"  *ngIf="table === false">
+        <smart-form-provider class="col-6"></smart-form-provider>
+        <smart-product-list class="col-6"></smart-product-list>
+    </div>
+</div>

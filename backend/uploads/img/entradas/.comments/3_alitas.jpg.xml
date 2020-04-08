@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<comment version="3.0">
+  <caption>Chicken wings with sauce and vegetables </caption>
+  <note>Grilled chicken wings with sauce and vegetables </note>
+  <place/>
+  <categories>
+    <category value="american"/>
+    <category value="background"/>
+    <category value="barbeque"/>
+    <category value="bbq"/>
+    <category value="bird"/>
+    <category value="chicken"/>
+    <category value="cook"/>
+    <category value="cooking"/>
+    <category value="cuisine"/>
+    <category value="delicious"/>
+    <category value="dinner"/>
+    <category value="dish"/>
+    <category value="eat"/>
+    <category value="fast"/>
+    <category value="food"/>
+    <category value="fresh"/>
+    <category value="fried"/>
+    <category value="grilled"/>
+    <category value="healthy"/>
+    <category value="hot"/>
+    <category value="ingredient"/>
+    <category value="junk"/>
+    <category value="lunch"/>
+    <category value="marinated"/>
+    <category value="meal"/>
+    <category value="meat"/>
+    <category value="nutrition"/>
+    <category value="portion"/>
+    <category value="poultry"/>
+    <category value="restaurant"/>
+    <category value="roasted"/>
+    <category value="smoke"/>
+    <category value="snack"/>
+    <category value="spicy"/>
+    <category value="tasty"/>
+    <category value="white"/>
+    <category value="whole"/>
+    <category value="wing"/>
+    <category value="yummy"/>
+    <category value="wooden"/>
+    <category value="table"/>
+    <category value="golden"/>
+    <category value="brown"/>
+    <category value="heap"/>
+    <category value="plate"/>
+    <category value="vegetable"/>
+    <category value="cucumber"/>
+    <category value="sauce"/>
+    <category value="sourcream"/>
+    <category value="closeup"/>
+  </categories>
+</comment>

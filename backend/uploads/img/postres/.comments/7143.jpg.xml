@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<comment version="3.0">
+  <caption>Chocolate chip cookies</caption>
+  <note>Sweet dessert with Chocolate chip cookies</note>
+  <place/>
+  <categories>
+    <category value="background"/>
+    <category value="baked"/>
+    <category value="brown"/>
+    <category value="chip"/>
+    <category value="chocolate"/>
+    <category value="closeup"/>
+    <category value="cookie"/>
+    <category value="cookies"/>
+    <category value="copy"/>
+    <category value="dark"/>
+    <category value="delicious"/>
+    <category value="dessert"/>
+    <category value="food"/>
+    <category value="fresh"/>
+    <category value="homemade"/>
+    <category value="life"/>
+    <category value="objects"/>
+    <category value="rustic"/>
+    <category value="snack"/>
+    <category value="space"/>
+    <category value="still"/>
+    <category value="sweet"/>
+    <category value="tasty"/>
+    <category value="wood"/>
+    <category value="wooden"/>
+  </categories>
+</comment>

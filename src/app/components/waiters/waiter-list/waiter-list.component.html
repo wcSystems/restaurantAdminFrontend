@@ -1,0 +1,94 @@
+<div>
+  <div *ngIf="waiter === true && table === false" id="panel-1" class="row panel">
+    <div class="panel-container show">
+      <div class="panel-content">
+        <button (click)="atras()" class="btn btn-primary">
+          Atras
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div id="panel-1" class="panel" [ngClass]="waiter === false && table === true ? 'col-sm-12' : 'col-sm-6'">
+      <div class="panel-hdr mb-3">
+        <h2 *ngIf="waiter === false && table === true">
+          Mesoneros
+          <span class="fw-300">
+            <i>/listado</i>
+          </span>
+        </h2>
+        <h2 *ngIf="waiter === true && table === false">
+          Mesonero:
+          <span class="fw-300">
+            <i>{{ waiterForm.firstname }} {{ waiterForm.firstname }}</i>
+          </span>
+        </h2>
+      </div>
+      <div class="panel-container show">
+        <div class="panel-content">
+          <smart-waiter-form *ngIf="waiter" [waiterForm]="waiterForm" [tableList]="tableList"
+            (waiterHijo)="updateWaiterTable($event)"></smart-waiter-form>
+          <table id="dt-user_panel" class="table table-bordered table-hover table-striped w-100" *ngIf="table">
+            <thead>
+              <tr>
+                <th class="center" style="width: 10%">Nombre</th>
+                <th class="center" style="width: 20%">Apellido</th>
+                <th class="center" style="width: 20%">Email</th>
+                <th class="center" style="width: 30%">Telefono</th>
+                <th class="center" style="width: 30%">Salario</th>
+                <th class="center" style="width: 10%">
+                  <i class="fal fa-pencil"></i>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of waiterList; index as i">
+                <td class="center">
+                  {{ item.firstname }}
+                </td>
+                <td class="center">
+                  {{ item.lastname }}
+                </td>
+                <td class="center">
+                  {{ item.email }}
+                </td>
+                <td class="center">
+                  {{ item.phone }}
+                </td>
+                <td class="center">
+                  {{ item.salary }}
+                </td>
+                <td class="center">
+                  <button (click)="
+                      updateWaiter(item.id); waiter = !waiter; table = !table
+                    " class="btn btn-secondary">
+                    <i class="fal fa-edit"></i>
+                  </button>
+                </td>
+                <ng-template #template class="modal-alert">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title">Eliminar a</h5>
+                      <button class="close" type="button">
+                        <span aria-hidden="true"><i class="fal fa-times"></i></span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      Esta accion no se puede deshacer
+                    </div>
+                    <div class="modal-footer">
+                      <button class="btn btn-secondary" type="button">
+                        Close</button><button class="btn btn-primary" type="button">
+                        Continuar
+                      </button>
+                    </div>
+                  </div>
+                </ng-template>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

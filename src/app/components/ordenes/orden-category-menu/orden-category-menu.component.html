@@ -1,0 +1,320 @@
+
+
+        
+
+
+  <ng-template #paymentOrder class="modal-alert">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Order N° {{ pComunitacionsOServices.saleOrderId }} </h5>
+      </div>
+      <div class="modal-body">
+        <div class="panel-container show">
+<div class="panel-content">
+<form >
+    <div class="col-md-12 col-sm-12">
+      <div class="row">
+
+        <div class="col-6 mb-15">
+          <div class="form-group">
+            <label class="form-label">Cedula</label>
+            <input
+              type="number"
+              class="form-control"
+              placeholder="identityCard"
+              name="identityCard"
+              disabled
+              [(ngModel)]="pComunitacionsOServices.identityCard"
+            />
+            <div class="invalid-feedback">Este campo es obligatorio</div>
+          </div>
+        </div>
+
+        <div class="col-6 mb-15">
+          <div class="form-group">
+            <label class="form-label">Nombre</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="firstname"
+              name="firstname"
+              disabled
+              [(ngModel)]="pComunitacionsOServices.firstname"
+            />
+            <div class="invalid-feedback">Este campo es obligatorio</div>
+          </div>
+        </div>
+
+        <div class="col-6 mb-15">
+          <div class="form-group">
+            <label class="form-label">Apellido</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="lastname"
+              name="lastname"
+              disabled
+              [(ngModel)]="pComunitacionsOServices.lastname"
+            />
+            <div class="invalid-feedback">Este campo es obligatorio</div>
+          </div>
+        </div>
+
+        <div class="col-6 mb-15">
+          <div class="form-group">
+            <label class="form-label">Telefono</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="phone"
+              name="phone"
+              disabled
+              [(ngModel)]="pComunitacionsOServices.phone"
+            />
+            <div class="invalid-feedback">Este campo es obligatorio</div>
+          </div>
+        </div>
+       
+        <div class="col-6 mb-15">
+          <div class="form-group">
+            <label class="form-label">Total a pagar</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="total"
+              name="total"
+              disabled
+              [(ngModel)]="totalPagar"
+            />
+            <div class="invalid-feedback">Este campo es obligatorio</div>
+          </div>
+        </div>
+
+        <div class="col-6 mb-15">
+          <div class="form-group">
+            <label class="form-label">Tipo de pago</label>
+            <select class="form-control" name="rol" [(ngModel)]="paymentMethodId">
+              <option disabled selected value="0" >Seleccione una opcion</option>
+              <option  *ngFor="let item of paymentMethodList; let i = index" value="{{ item.id }}"> {{ item.name }} </option> 
+            </select>
+          </div>
+        </div>
+
+        <div class="col-6 mb-15">
+          <div class="form-group">
+            <label class="form-label">Referencia</label>
+            <input
+              type="number"
+              class="form-control"
+              placeholder="ref"
+              name="ref"
+              [(ngModel)]="referencia"
+            />
+            <div class="invalid-feedback">Este campo es obligatorio</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+   
+  </form>
+</div>
+</div>
+      </div>
+      <div class="modal-footer">
+        
+        <button class="btn btn-secondary   ml-3 mb-3" (click)="modalRef.hide()" type="button"> Cancelar </button>
+        <button (click)="pagar()" class="btn btn-primary  ml-3 mb-3" type="submit">
+          Pagar
+        </button>
+      </div>
+    </div>
+  </ng-template>
+
+
+
+<div class="row">
+  <div class="col-12">
+    <div  class="panel">
+      <div class="panel-hdr mb-3" (click)="getAllCategoryMenu()">
+          <h2>
+              Menus
+              <span class="fw-300">
+                  <i>Lista</i>
+                  
+              </span>
+          </h2>
+          <button class="btn bg-primary mr-3">
+            <i class="fal fa-home"></i>
+          </button>
+      </div>
+      <div class="panel-container show">
+          <div class="panel-content">
+
+            
+    <div
+    cdkDropList
+    #todoList="cdkDropList"
+    [cdkDropListData]="categoryMenuList"
+    [cdkDropListConnectedTo]="[doneList]"
+    (cdkDropListDropped)="onDrop($event)"
+    >
+    <div *ngFor="let item of categoryMenuList; let i = index" cdkDrag [cdkDragDisabled] = "item.price === undefined" >
+      <div class="m-3 p-3 bg-primary">
+        <div class="row">
+          <button *ngIf="item.price !== undefined" class="btn col-2" (click)="cantidad('+',i)">
+            <i class="fal fa-plus "></i>
+          </button>
+          <div class="col-8" style="display: grid;" (click)="getAllSubCategoryMenu(item.id)">
+            <div class="row d-table">
+              <div class="text-white h2" [ngClass]="{'col-6': menuTF === true,'col-12': menuTF === false}" >
+                <h2>{{ item.name }}</h2>
+              </div>
+              <div *ngIf="item.price !== undefined" class="bg-dark text-white rounded p-2 float-right" style="width: 90px;">
+                <div class="d-table">
+                  <div *ngIf="item.price !== undefined" class="bg-white  text-dark rounded-circle text-center float-left cant ">
+                    {{ item.order_restriction_id }}
+                  </div>
+                  <div class="float-left text-center cant">
+                    {{'$&nbsp;'+ item.price * item.order_restriction_id }}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button *ngIf="item.price !== undefined" class="btn col-2" (click)="cantidad('-',i)">
+            <i class="fal fa-minus"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          </div>
+        </div>
+    </div>
+  </div>
+  <div class="col-12">
+
+    <div  class="panel">
+          <div class="panel-hdr mb-3">
+              <h2>
+                  Pedidos
+                  <span class="fw-300">
+                      <i>Lista</i>
+                      
+                  </span>
+              </h2>
+          </div>
+         
+          <div class="panel-container show">
+              <div class="panel-content">
+
+
+
+
+
+
+
+                
+        <div
+        cdkDropList
+        #doneList="cdkDropList"
+        [cdkDropListData]="pComunitacionsOServices.completed"
+        [cdkDropListConnectedTo]="[todoList]"
+        (cdkDropListDropped)="onDrop($event)"
+        >
+    
+        <div class="panel-container show">
+          <div class="panel-content">
+            <table
+              id="dt-user_panel"
+              class="table table-bordered table-hover table-striped w-100"
+            >
+              <thead>
+                <tr>
+                  <th class="center" style="width: 20%">Nombre </th>
+                  <th class="center" style="width: 20%">Precio (Unidad)</th>
+                  <th class="center" style="width: 20%">Cantidad</th>
+                  <th class="center" style="width: 20%">Sub total</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of pComunitacionsOServices.completed; index as i" cdkDrag>
+                 
+                  <td class="center">
+                    {{  ({'id':item.rest_menu_id, 'key': 'name', 'obj':menuList } | idKey) }}
+                  </td>
+                  <td class="center">
+                    {{'$&nbsp;'+ item.price }}
+                  </td>
+                  <td class="center">
+                    {{ item.quantity }}
+                  </td>
+                  <td class="center">
+                    {{'$&nbsp;'+ item.quantity * item.price }}
+                  </td>
+  
+                
+                </tr>
+              </tbody>
+            </table>
+            <table
+              style="margin-bottom: 30px !important;"
+              class="table table-bordered table-hover table-striped w-50 float-right"
+            >
+              <thead>
+                <tr>
+                  <th class="center" style="width: 20%">Total </th>
+                  <th  style="width: 20%">$&nbsp;{{ total({'n1':'quantity', 'n2':'price', 'obj':pComunitacionsOServices.completed})  }} </th>
+                </tr>
+              </thead>
+            </table>
+            
+          </div>
+         
+        </div>
+      </div>
+
+
+      <footer style="clear: both;">
+        <div class="col-12">
+          <button (click)="eject(2,'pagar')" class="btn btn-primary float-right ml-3 mb-3" type="submit">
+            Pagar
+          </button>
+          <button (click)="eject(5,'anular')" class="btn btn-secondary float-right ml-3 mb-3" type="submit">
+            Anular
+          </button>
+          
+        </div>
+      </footer>
+
+
+
+
+
+
+              </div>
+
+              
+            </div>
+        </div>
+  </div>
+</div>
+
+
+
+

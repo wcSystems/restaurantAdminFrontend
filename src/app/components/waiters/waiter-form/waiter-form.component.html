@@ -1,0 +1,98 @@
+<div class="col-md-12">
+    <div class="row">
+        <div class="col-md-3 col-col-sm-12" *ngFor="let item of tableList; let i = index">
+            <div class="form-group center">
+                <div class="form-control selectAdd " [ngClass]="{
+            'lotterie-box':
+              (item.status === true || item.status === 1) &&
+              item.id != ({ 'id': item.id, 'key': 'id' , 'obj': waiterForm['table'] } | idKey),
+            'lotterie-box2':
+              (item.status === true || item.status === 1) &&
+              item.id === ({ 'id': item.id, 'key': 'id' , 'obj': waiterForm['table'] } | idKey),
+            'lotterie-box-disable':
+              (item.status === false || item.status === 0) &&
+              (item.id === ({ 'id': item.id, 'key': 'id' , 'obj': waiterForm['table'] } | idKey) ||
+                item.id != ({ 'id': item.id, 'key': 'id' , 'obj': waiterForm['table'] } | idKey))
+          }">
+                    <div class="container-flex">
+                        <div class="col-12 mb-2">
+                            <div class="row">
+                                <div class="col-9">
+                                    <div class="row">
+                                        <div class="col-12">Mesa</div>
+                                    </div>
+                                </div>
+                                <div class="col-3 rounded-circle" [ngClass]="{
+                    numeroMesa:
+                      (item.status === true || item.status === 1) &&
+                      item.id != ({ 'id': item.id, 'key': 'id' , 'obj': waiterForm['table'] } | idKey),
+                    numeroMesa2:
+                      (item.status === true || item.status === 1) &&
+                      item.id === ({ 'id': item.id, 'key': 'id' , 'obj': waiterForm['table'] } | idKey),
+                    'numeroMesa-disable':
+                      (item.status === false || item.status === 0) &&
+                      (item.id === ({ 'id': item.id, 'key': 'id' , 'obj': waiterForm['table'] } | idKey) ||
+                        item.id != ({ 'id': item.id, 'key': 'id' , 'obj': waiterForm['table'] } | idKey))
+                  }">
+                                    {{ item.id }}
+                                </div>
+                                <div class="col-12 mt-2" *ngIf="
+                    (item.status === true || item.status === 1) &&
+                    item.id != ({ 'id': item.id, 'key': 'id' , 'obj': waiterForm['table'] } | idKey)
+                  " (click)="add(true, waiterForm.id, item.id)">
+                                    <i class="fal fa-5x fa-plus" [ngClass]="{
+                      icon:
+                        (item.status === true || item.status === 1) &&
+                        item.id != ({ 'id': item.id, 'key': 'id' , 'obj': waiterForm['table'] } | idKey),
+                      icon2:
+                        (item.status === true || item.status === 1) &&
+                        item.id === ({ 'id': item.id, 'key': 'id' , 'obj': waiterForm['table'] } | idKey),
+                      'icon-disable':
+                        (item.status === false || item.status === 0) &&
+                        (item.id === ({ 'id': item.id, 'key': 'id' , 'obj': waiterForm['table'] } | idKey) ||
+                          item.id != ({ 'id': item.id, 'key': 'id' , 'obj': waiterForm['table'] } | idKey))
+                    }"></i>
+                                </div>
+                                <div class="col-12 mt-2" *ngIf="
+                    (item.status === true || item.status === 1) &&
+                    item.id === ({ 'id': item.id, 'key': 'id' , 'obj': waiterForm['table'] } | idKey)
+                  " (click)="add(false, waiterForm.id, item.id)">
+                                    <i class="fal fa-5x fa-minus" [ngClass]="{
+                      icon:
+                        (item.status === true || item.status === 1) &&
+                        item.id != ({ 'id': item.id, 'key': 'id' , 'obj': waiterForm['table'] } | idKey),
+                      icon2:
+                        (item.status === true || item.status === 1) &&
+                        item.id === ({ 'id': item.id, 'key': 'id' , 'obj': waiterForm['table'] } | idKey),
+                      'icon-disable':
+                        (item.status === false || item.status === 0) &&
+                        (item.id === ({ 'id': item.id, 'key': 'id' , 'obj': waiterForm['table'] } | idKey) ||
+                          item.id != ({ 'id': item.id, 'key': 'id' , 'obj': waiterForm['table'] } | idKey))
+                    }"></i>
+                                </div>
+                                <div class="col-12 mt-2" *ngIf="
+                    (item.status === false || item.status === 0) &&
+                    (item.id === ({ 'id': item.id, 'key': 'id' , 'obj': waiterForm['table'] } | idKey) ||
+                      item.id != ({ 'id': item.id, 'key': 'id' , 'obj': waiterForm['table'] } | idKey))
+                  ">
+                                    <i class="fal fa-5x fa-ban" [ngClass]="{
+                      icon:
+                        (item.status === true || item.status === 1) &&
+                        item.id != ({ 'id': item.id, 'key': 'id' , 'obj': waiterForm['table'] } | idKey),
+                      icon2:
+                        (item.status === true || item.status === 1) &&
+                        item.id === ({ 'id': item.id, 'key': 'id' , 'obj': waiterForm['table'] } | idKey),
+                      'icon-disable':
+                        (item.status === false || item.status === 0) &&
+                        (item.id === ({ 'id': item.id, 'key': 'id' , 'obj': waiterForm['table'] } | idKey) ||
+                          item.id != ({ 'id': item.id, 'key': 'id' , 'obj': waiterForm['table'] } | idKey))
+                    }"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

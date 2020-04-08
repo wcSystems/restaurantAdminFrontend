@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<comment version="3.0">
+  <caption/>
+  <note>Tiramissu dessert with mint</note>
+  <place/>
+  <categories>
+    <category value="served"/>
+    <category value="italy"/>
+    <category value="layered"/>
+    <category value="cafe"/>
+    <category value="luxury"/>
+    <category value="mascarpone"/>
+    <category value="pastry"/>
+    <category value="plate"/>
+    <category value="powder"/>
+    <category value="powdered"/>
+    <category value="restaurant"/>
+    <category value="light"/>
+    <category value="slice"/>
+    <category value="sugar"/>
+    <category value="sweet"/>
+    <category value="tasty"/>
+    <category value="tiramisu"/>
+    <category value="traditional"/>
+    <category value="white"/>
+    <category value="brown"/>
+    <category value="biscuit"/>
+    <category value="tiramissu"/>
+    <category value="coffee"/>
+    <category value="cake"/>
+    <category value="calories"/>
+    <category value="cheese"/>
+    <category value="chocolate"/>
+    <category value="cinnamon"/>
+    <category value="closeup"/>
+    <category value="cocoa"/>
+    <category value="italian"/>
+    <category value="cream"/>
+    <category value="creme"/>
+    <category value="cuisine"/>
+    <category value="decorated"/>
+    <category value="delicious"/>
+    <category value="delights"/>
+    <category value="dessert"/>
+    <category value="elegant"/>
+    <category value="food"/>
+    <category value="fresh"/>
+    <category value="gourmet"/>
+    <category value="homemade"/>
+  </categories>
+</comment>

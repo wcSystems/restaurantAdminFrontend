@@ -1,0 +1,54 @@
+<div>
+    <div class="row">
+        <div *ngIf="booleanForm === true" class="col-12">
+            <div class="panel">
+                <div class="panel-container show">
+                    <div class="panel-content">
+                    <button (click)="btnBooleanForm()" class="btn btn-secondary">
+                        Lista de Ordenes
+                    </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <smart-orden-form  *ngIf="booleanForm === true" class="col-6"></smart-orden-form>
+        <smart-orden-category-menu *ngIf="booleanForm === true"  class="col-6"></smart-orden-category-menu>
+        <div class="row" *ngIf="booleanForm === false">
+            <div  class="col-md-3 col-sm-12" *ngFor="let item of tableList; let i = index">
+                <div class="form-group center">
+                    <div  class="form-control selectAdd " [ngClass]="item.status ? 'lotterie-box' : 'lotterie-box-disable'">
+                        <div class="container-flex">
+                            <div class="col-12 mb-2">
+                                <div class="row">
+                                    <div class="col-3 rounded-circle text-white numeroMesa2" (click)="formOrdenTable('add',item)" >
+                                        <i class="fal fa-plus"></i>
+                                    </div>
+                                    <div class="col-6">
+                                        Mesa
+                                    </div>
+                                    <div class="col-3 rounded-circle bg-primary text-white numeroMesa">
+                                        {{ item.id }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="row" >
+                                        <div *ngFor="let orden of item['sale_orders']; let i = index" class="col-3 text-white m-1 bg-primary" (click)="formOrdenTable('edit',item, orden.id)" >
+                                            {{ i + 1 }}
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+        
+   
+
+
+
+

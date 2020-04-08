@@ -1,0 +1,107 @@
+<div  class="panel">
+    <div class="panel-hdr mb-3">
+        <h2>
+            Proveedor
+            <span class="fw-300">
+                <i>Orden nn</i>
+            </span>
+        </h2>
+    </div>
+    <div class="panel-container show">
+        <div class="panel-content">
+        <form [formGroup]="form" novalidate >
+            <div class="col-md-12 col-sm-12">
+            <div class="row">
+                <div class="col-6 mb-15">
+                    <div class="form-group">
+                      <label class="form-label" [ngClass]="{'errorText': (rifField.hasError('required') && rifField.touched)}">Rif</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        [ngClass]="{'errorBorder': (rifField.hasError('required') && rifField.touched)}"
+                        placeholder="Cedula"
+                        name="identityCard"
+                        formControlName="rif"
+                        list="providerList"
+                      />
+                      <datalist id="providerList">
+                        <option *ngFor="let item of providers; let i = index" value="{{ item.rif || item.name || item.address }}"> {{ item.rif }}, {{ item.name }}, {{ item.address }} </option>
+                    </datalist>
+                        <div class="mb-2" [ngClass]="{'errorText': (rifField.hasError('required') && rifField.touched)}" *ngIf="rifField.hasError('required') && rifField.touched">
+                            Este campo es obligatorio
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 mb-15">
+                    <div class="form-group">
+                        <label class="form-label" [ngClass]="{'errorText': (nameField.hasError('required') && nameField.touched)}">Nombre</label>
+                        <input
+                        type="text"
+                        class="form-control"
+                        [ngClass]="{'errorBorder': (nameField.hasError('required') && nameField.touched)}"
+                        placeholder="Nombre"
+                        name="firstname"
+                        formControlName="name"
+                        />
+                        <div class="mb-2" [ngClass]="{'errorText': (nameField.hasError('required') && nameField.touched)}" *ngIf="nameField.hasError('required') && nameField.touched">
+                            Este campo es obligatorio
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 mb-15">
+                    <div class="form-group">
+                        <label class="form-label" [ngClass]="{'errorText': (emailField.hasError('required') && emailField.touched)}">Email</label>
+                        <input
+                        type="email"
+                        class="form-control"
+                        [ngClass]="{'errorBorder': (emailField.hasError('required') && emailField.touched)}"
+                        placeholder="email"
+                        name="email"
+                        formControlName="email"
+                        />
+                        <div class="mb-2" [ngClass]="{'errorText': (emailField.hasError('required') && emailField.touched)}" *ngIf="emailField.hasError('required') && emailField.touched">
+                            Este campo es obligatorio
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 mb-15">
+                    <div class="form-group">
+                        <label class="form-label" [ngClass]="{'errorText': (phoneField.hasError('required') && phoneField.touched)}">Telefono</label>
+                        <input
+                        class="form-control"
+                        [ngClass]="{'errorBorder': (phoneField.hasError('required') && phoneField.touched)}"
+                        type="text"
+                        placeholder="Telefono"
+                        name="phone"
+                        formControlName="phone"
+                        />
+                        <div class="mb-2" [ngClass]="{'errorText': (phoneField.hasError('required') && phoneField.touched)}" *ngIf="phoneField.hasError('required') && phoneField.touched">
+                            Este campo es obligatorio
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 mb-15">
+                    <div class="form-group">
+                        <label class="form-label" [ngClass]="{'errorText': (addressField.hasError('required') && addressField.touched)}">Direccion</label>
+                        <textarea
+                        type="text" class="form-control"  
+                        placeholder="Comentario"
+                        [ngClass]="{'errorBorder': (addressField.hasError('required') && addressField.touched)}"
+                        name="comment"
+                        formControlName="address"
+                        ></textarea>
+                        {{ addressField.value.length }}/80
+                        <div class="mb-2" [ngClass]="{'errorText': (addressField.hasError('required') && addressField.touched)}" *ngIf="addressField.hasError('required') && addressField.touched">
+                            Este campo es obligatorio
+                        </div>
+                        <div class="mb-2" [ngClass]="{'errorText': (addressField.hasError('maxlength') && addressField.touched)}" *ngIf="addressField.hasError('maxlength')">
+                            Te pasaste, maximo deben ser 80 caracteres.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,174 @@
+<div>
+    <div id="panel-1" class="row panel">
+        <div class="panel-container show">
+          <div class="panel-content">
+            <button (click)="modalJob(newJobClass)" class="btn btn-primary">
+              Nuevo Trabajo
+            </button>
+          </div>
+        </div>
+      </div>
+      <ng-template #newJobClass class="modal-alert">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Nuevo Trabajo</h5>
+          </div>
+          <div class="modal-body">
+            <div class="panel-container show">
+<div class="panel-content">
+    <form >
+        <div class="col-md-12 col-sm-12">
+          <div class="row">
+
+
+            <div class="col-6 mb-15">
+              <div class="form-group">
+                <label class="form-label">Nombre</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="name"
+                  name="name"
+                  [(ngModel)]="name"
+                />
+                <div class="invalid-feedback">Este campo es obligatorio</div>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+       
+      </form>
+</div>
+</div>
+          </div>
+          <div class="modal-footer">
+            <button (click)="createJob()" class="btn btn-primary  ml-3 mb-3" type="submit">
+              Crear
+            </button>
+            <button class="btn btn-secondary   ml-3 mb-3" (click)="modalRef.hide()" type="button"> Close </button>
+          </div>
+        </div>
+      </ng-template>
+    
+    <div class="row">
+      <div id="panel-1" class="panel col-sm-6">
+        <div class="panel-hdr mb-3">
+          <h2>
+            Trabajo
+  
+            <span class="fw-300">
+              <i>/listado</i>
+            </span>
+          </h2>
+        </div>
+        <div class="panel-container show">
+          <div class="panel-content">
+            <table
+              id="dt-user_panel"
+              class="table table-bordered table-hover table-striped w-100"
+            >
+              <thead>
+                <tr>
+                  <th class="center" style="width: 20%">Nombre </th>
+                  <th class="center" style="width: 10%">
+                    <i class="fal fa-pencil"></i>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of jobs; index as i">
+                 
+                  <td class="center">
+                    {{ item.name }}
+                  </td>
+  
+                  <td class="center">
+                    <button
+                      (click)="openModal(template,item.id)"
+                      class="btn btn-secondary"
+                    >
+                      <i class="fal fa-edit"></i>
+                    </button>
+                  </td>
+                  <ng-template #template class="modal-alert">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title">Editar a {{ item.name }}</h5>
+                      </div>
+                      <div class="modal-body">
+                        <div class="panel-container show">
+            <div class="panel-content">
+                <form >
+                    <div class="col-md-12 col-sm-12">
+                      <div class="row">
+
+
+                        <div class="col-6 mb-15">
+                          <div class="form-group">
+                            <label class="form-label">Nombre</label>
+                            <input
+                              type="text"
+                              class="form-control"
+                              placeholder="name"
+                              name="name"
+                              [(ngModel)]="name"
+                            />
+                            <div class="invalid-feedback">Este campo es obligatorio</div>
+                          </div>
+                        </div>
+
+
+                        <div class="col-6 mb-15 mt-3">
+                          <div class="form-group">
+                            <div class="custom-control custom-checkbox">
+
+                          
+
+                              <input
+                                type="checkbox"
+                                class="custom-control-input"
+                                [id]="'checkbox_'+id+'_'+name"
+                                [checked]="status"
+                                (change)="status = !status"
+                              />
+                              <label class="custom-control-label" [for]="'checkbox_'+id+'_'+name">
+                                <p style="font-size:12px; margin-bottom: .1rem !important;">
+                                  Habilitado
+                                </p>
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+
+                        
+
+
+
+                      </div>
+                    </div>
+                   
+                  </form>
+            </div>
+          </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button (click)="updateJob()" class="btn btn-primary  ml-3 mb-3" type="submit">
+                          Guardar
+                        </button>
+                        <button class="btn btn-secondary   ml-3 mb-3" (click)="modalRef.hide()" type="button"> Close </button>
+                      </div>
+                    </div>
+                  </ng-template>
+
+                
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

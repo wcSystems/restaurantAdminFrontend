@@ -1,0 +1,100 @@
+<div  class="panel">
+    <div class="panel-hdr mb-3">
+        <h2>
+            Mesa {{ pComunitacionsOServices.table.name }}
+            <span class="fw-300">
+                <i>Orden {{ pComunitacionsOServices.saleOrderId }}</i>
+            </span>
+        </h2>
+    </div>
+    <div class="panel-container show">
+        <div class="panel-content">
+        <form >
+            <div class="col-md-12 col-sm-12">
+            <div class="row">
+                <div class="col-6 mb-15">
+                    <div class="form-group">
+                      <label class="form-label">Cedula</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Cedula"
+                        name="identityCard"
+                        list="clientesList"
+                        [formControl]="identityCard2"
+                      />
+                      <datalist id="clientesList">
+                        <option  *ngFor="let item of customerList; let i = index" value="{{ item.identity_card }}"> {{ item.identity_card }} </option>
+                      </datalist>
+                      <div class="invalid-feedback">Este campo es obligatorio</div>
+                    </div>
+                  </div>
+                <div class="col-6 mb-15">
+                    <div class="form-group">
+                        <label class="form-label">Nombre</label>
+                        <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Nombre"
+                        name="firstname"
+                        [(ngModel)]="pComunitacionsOServices.firstname"
+                        (input)="pComunitacionsOServices.methodSendObj([{clave:'firstname',valor: $event.target.value}])"
+                        />
+                        <div class="invalid-feedback">Este campo es obligatorio</div>
+                    </div>
+                </div>
+                <div class="col-6 mb-15">
+                    <div class="form-group">
+                        <label class="form-label">Apellido</label>
+                        <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Apellido"
+                        name="lastname"
+                        [(ngModel)]="pComunitacionsOServices.lastname"
+                        (input)="pComunitacionsOServices.methodSendObj([{clave:'lastname',valor: $event.target.value}])"
+                        />
+                        <div class="invalid-feedback">Este campo es obligatorio</div>
+                    </div>
+                </div>
+                <div class="col-6 mb-15">
+                    <div class="form-group">
+                        <label class="form-label">Telefono</label>
+                        <input
+                        class="form-control"
+                        type="text"
+                        placeholder="Telefono"
+                        name="phone"
+                        [(ngModel)]="pComunitacionsOServices.phone"
+                        (input)="pComunitacionsOServices.methodSendObj([{clave:'phone',valor: $event.target.value}])"
+                        />
+                    </div>
+                </div>
+                <div class="col-6 mb-15">
+                    <div class="form-group">
+                      <label class="form-label">Tipo de Orden</label>
+                      <select class="form-control" name="orderTypeId" [(ngModel)]="pComunitacionsOServices.orderTipeId" (change)="pComunitacionsOServices.methodSendObj([{clave:'orderTipeId',valor: $event.target.value}])">
+                        <option disabled>Seleccione una opcion</option>
+                        <option  *ngFor="let item of orderTypeList; let i = index" value="{{ item.id }}"> {{ item.name }} </option> 
+                      </select>
+                    </div>
+                </div>
+                <div class="col-6 mb-15">
+                    <div class="form-group">
+                        <label class="form-label">Comentario</label>
+                        <textarea style="margin-bottom: 15px;"
+                        type="text" class="form-control"  
+                        placeholder="Comentario"
+                        name="comment"
+                        [(ngModel)]="pComunitacionsOServices.comment"
+                        (input)="pComunitacionsOServices.methodSendObj([{clave:'comment',valor: $event.target.value}])"
+                        ></textarea>
+
+                    </div>
+                </div>
+            </div>
+            </div>
+        </form>
+        </div>
+    </div>
+</div>

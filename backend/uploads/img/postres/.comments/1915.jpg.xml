@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<comment version="3.0">
+  <caption/>
+  <note>green cheesecake topped with lemon and mint</note>
+  <place/>
+  <categories>
+    <category value="food"/>
+    <category value="delicious"/>
+    <category value="sweet"/>
+    <category value="mint"/>
+    <category value="dessert"/>
+    <category value="plate"/>
+    <category value="cheese"/>
+    <category value="cream"/>
+    <category value="cake"/>
+    <category value="lemon"/>
+    <category value="topped"/>
+    <category value="green"/>
+    <category value="cheesecake"/>
+  </categories>
+</comment>

@@ -1,0 +1,170 @@
+<div>
+    <div id="panel-1" class="row panel">
+      <div class="panel-container show">
+        <div class="panel-content">
+          <button (click)="UserList()" class="btn btn-secondary">
+            Lista de Usuarios
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+        <div  id="panel-1" class="panel col-sm-6">
+          <div class="panel-hdr mb-3">
+            <h2>
+              Usuarios
+    
+              <span class="fw-300">
+                <i>/Editar</i>
+              </span>
+            </h2>
+          </div>
+          <div class="panel-container show">
+            <div class="panel-content">
+                <form >
+                    <div class="col-md-12 col-sm-12">
+                      <div class="row">
+
+
+                        <div class="col-12 mb-15">
+                          <div class="form-group" >
+                            <label for="aqui">
+                              <img
+                              [src]="final ? final : defaults"
+                              
+                              
+                              class="img-responsive rounded-circle"
+                              height="100"
+                              width="100"
+                              (mouseover)="imgProfile = defaults" (mouseleave)="imgProfile = final"
+                            />
+                            <input
+                              class="file-input d-none"
+                              id="aqui"
+                              type="file"
+                              name="file"
+                              #fileInput
+                              (change)="onChange(fileInput.files[0])"
+                            />
+                            </label>
+                           
+                          </div>
+                        </div>
+
+
+                        <div class="col-6 mb-15">
+                          <div class="form-group">
+                            <label class="form-label">firstname</label>
+                            <input
+                              type="text"
+                              class="form-control"
+                              placeholder="firstname"
+                              [(ngModel)]="firstname"
+                              name="firstname"
+                            />
+                            <div class="invalid-feedback">Este campo es obligatorio</div>
+                          </div>
+                        </div>
+
+
+
+                        <div class="col-6 mb-15">
+                          <div class="form-group">
+                            <label class="form-label">lastname</label>
+                            <input
+                              type="text"
+                              class="form-control"
+                              placeholder="lastname"
+                              [(ngModel)]="lastname"
+                              name="lastname"
+                            />
+                            <div class="invalid-feedback">Este campo es obligatorio</div>
+                          </div>
+                        </div>
+                        <div class="col-6 mb-15">
+                          <div class="form-group">
+                            <label class="form-label">username</label>
+                            <input
+                              type="email"
+                              class="form-control"
+                              placeholder="username"
+                              [(ngModel)]="username"
+                              name="username"
+                            />
+                            <div class="invalid-feedback">Este campo es obligatorio</div>
+                          </div>
+                        </div>
+                        <div class="col-6 mb-15">
+                          <div class="form-group">
+                            <label class="form-label">email</label>
+                            <input
+                              class="form-control"
+                              type="email"
+                              placeholder="email"
+                              [(ngModel)]="email"
+                              name="email"
+                            />
+                          </div>
+                        </div>
+                        <div class="col-6 mb-15">
+                          <div class="form-group">
+                            <label class="form-label" for="description">password</label>
+                            <input
+                              type="password"
+                              class="form-control"
+                              placeholder="password"
+                              [(ngModel)]="password"
+                              name="password"
+                            />
+                            <div class="invalid-feedback">Este campo es obligatorio</div>
+                          </div>
+                        </div>
+                        <div class="col-6 mb-15">
+                          <div class="form-group">
+                            <label class="form-label">Rol</label>
+                            <select class="form-control" name="rol" [(ngModel)]="rol">
+                              <option disabled>Seleccione una opcion</option>
+                              <option  *ngFor="let role of roles; let i = index" value="{{ role.id }}"> {{ role.name }} </option> 
+                            </select>
+                          </div>
+                        </div>
+
+                        <div class="col-6 mb-15 mt-3">
+                          <div class="form-group">
+                            <div class="custom-control custom-checkbox">
+                              <input
+                                type="checkbox"
+                                class="custom-control-input"
+                                [id]="'checkbox_'+id+'_'+email"
+                                [checked]="status"
+                                (change)="status = !status"
+                              />
+                              <label class="custom-control-label" [for]="'checkbox_'+id+'_'+email">
+                                <p style="font-size:12px; margin-bottom: .1rem !important;">
+                                  Habilitado
+                                </p>
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+
+                        
+
+
+
+                      </div>
+                    </div>
+                    <footer class="mt-3">
+                      <div class="col-12">
+                        <button (click)="editUserSend()" class="btn btn-primary float-right ml-3 mb-3" type="submit">
+                          Guardar
+                        </button>
+                      </div>
+                    </footer>
+                  </form>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  

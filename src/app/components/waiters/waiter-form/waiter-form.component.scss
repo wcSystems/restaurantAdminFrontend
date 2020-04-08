@@ -1,0 +1,82 @@
+.lotterie-box {
+  text-align-last: center;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  text-indent: 1px;
+  text-overflow: "";
+  padding: 0.5rem 0.5rem !important;
+  margin: auto;
+  width: 150px;
+  height: 150px;
+  border: 2px solid #a38cc6 !important;
+  margin-bottom: 20px;
+}
+
+.lotterie-box-disable {
+  text-align-last: center;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  text-indent: 1px;
+  text-overflow: "";
+  padding: 0.5rem 0.5rem !important;
+  margin: auto;
+  width: 150px;
+  height: 150px;
+  border: 2px solid #535353 !important;
+  margin-bottom: 20px;
+  background-color: #d3d3d3;
+}
+
+.lotterie-box2 {
+  text-align-last: center;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  text-indent: 1px;
+  text-overflow: "";
+  padding: 0.5rem 0.5rem !important;
+  margin: auto;
+  width: 150px;
+  height: 150px;
+  border: 2px solid #03cf14 !important;
+  margin-bottom: 20px;
+}
+
+.numeroMesa {
+  width: 30px !important;
+  height: 30px !important;
+  padding: 5px !important;
+  background-color: #a38cc6 !important;
+  color: white;
+}
+
+.numeroMesa2 {
+  width: 30px !important;
+  height: 30px !important;
+  padding: 5px !important;
+  background-color: #03cf14 !important;
+  color: white;
+}
+
+.numeroMesa-disable {
+  width: 30px !important;
+  height: 30px !important;
+  padding: 5px !important;
+  background-color: #535353 !important;
+  color: white;
+}
+
+.numeroPuesto {
+  margin: 10px;
+}
+
+.icon {
+  color: #a38cc6;
+}
+
+.icon2 {
+  color: #03cf14;
+}
+
+.icon-disable {
+  color: #535353;
+}
