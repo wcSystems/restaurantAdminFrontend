@@ -17,11 +17,7 @@ const routes: Routes = [
       { path: 'tables', loadChildren: () => import('./components/table/table.module').then(m => m.TableModule) },
       { path: 'waiterList', loadChildren: () => import('./components/waiters/waiters.module').then(m => m.WaitersModule) },
       { path: 'ordersCompras', loadChildren: () => import('./components/ordenes/ordenes.module').then(m => m.OrdenesModule) },
-      { path: 'purchaseOrder', loadChildren: () => import('./components/purchase-order/purchase-order.module').then(m => m.PurchaseOrderModule) },
-      { path: 'settings', loadChildren: () => import('./features/settings/settings.module').then(m => m.SettingsModule) },
-      { path: 'info', loadChildren: () => import('./features/info/info.module').then(m => m.InfoModule) },
-      { path: 'ui', loadChildren: () => import('./features/ui-pages/ui-pages.module').then(m => m.UiPagesModule) },
-      { path: 'icons', loadChildren: () => import('./features/icons/icons.module').then(m => m.IconsModule) },
+      { path: 'purchaseOrder', loadChildren: () => import('./components/purchase-order/purchase-order.module').then(m => m.PurchaseOrderModule) }
     ]
   },
   { path: 'login', component: LoginComponent },
