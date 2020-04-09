@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { environment } from '../../environments/environment'; 
 
 @Injectable({
   providedIn: 'root'
@@ -21,18 +22,18 @@ export class CustomerService {
   }
 
   getAllCustomers() {
-    return this.http.get(`http://127.0.0.1:4000/api/customer`, this.headers );
+    return this.http.get(`${environment.domain}/customers`, this.headers );
   }
 
   postCustomer(customer) {
-    return this.http.post(`http://127.0.0.1:4000/api/customer`, customer, this.headers );
+    return this.http.post(`${environment.domain}/customers`, customer, this.headers );
   }
 
   getCustomer(id) {
-    return this.http.get(`http://127.0.0.1:4000/api/customer/${id}`, this.headers );
+    return this.http.get(`${environment.domain}/customers/${id}`, this.headers );
   }
 
   getCustomerIdentityCard(IdentityCard) {
-    return this.http.get(`http://127.0.0.1:8000/api/customers/search/${IdentityCard}`, this.headers );
+    return this.http.get(`${environment.domain}/customers/search/${IdentityCard}`, this.headers );
   }
 }

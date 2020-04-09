@@ -2,6 +2,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Table } from '../models/table.model';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -21,24 +22,24 @@ export class TableService {
   }
 
   getAllTables() {
-    return this.http.get<Table[]>(`http://127.0.0.1:4000/api/table`, this.headers );
+    return this.http.get<Table[]>(`${environment.domain}/tables`, this.headers );
   }
 
   getAllTableOrders() {
-    return this.http.get(`http://127.0.0.1:4000/api/table/sale-order`, this.headers );
+    return this.http.get(`${environment.domain}/tables/sale-orders`, this.headers );
   }
 
 
   postTable(table) {
-    return this.http.post<Table[]>(`http://127.0.0.1:4000/api/table`, table , this.headers );
+    return this.http.post<Table[]>(`${environment.domain}/tables`, table , this.headers );
   }
 
   updateTable(table) {
-    return this.http.put<Table[]>(`http://127.0.0.1:4000/api/table`, table, this.headers);
+    return this.http.put<Table[]>(`${environment.domain}/tables`, table, this.headers);
   }
 
   postOrderTable(tableId) {
-    return this.http.post<Table[]>(`http://127.0.0.1:8000/api/sale-orders`, tableId, this.headers);
+    return this.http.post<Table[]>(`${environment.domain}/sale-orders`, tableId, this.headers);
   }
 
 

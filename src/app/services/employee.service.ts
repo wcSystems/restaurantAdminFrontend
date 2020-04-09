@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Employee } from '../models/employee.model';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class EmployeeService {
   constructor(private http: HttpClient) { }
 
@@ -14,7 +16,7 @@ export class EmployeeService {
       Authorization: 'Bearer' + localStorage.getItem('bearer')
     });
     return this.http.get<Employee[]>(
-      `http://127.0.0.1:4000/api/employee/${id}`,
+      `${environment.domain}/employees/${id}`,
       { headers }
     );
   }
@@ -25,7 +27,7 @@ export class EmployeeService {
       Authorization: 'Bearer' + localStorage.getItem('bearer')
     });
     return this.http.put<Employee[]>(
-      `http://127.0.0.1:4000/api/employee`,
+      `${environment.domain}/employees`,
       employee,
       {
         headers
@@ -38,7 +40,7 @@ export class EmployeeService {
       'Content-Type': 'application/json',
       Authorization: 'Bearer' + localStorage.getItem('bearer')
     });
-    return this.http.get<Employee[]>(`http://127.0.0.1:4000/api/employee`, {
+    return this.http.get<Employee[]>(`${environment.domain}/employees`, {
       headers
     });
   }
@@ -50,7 +52,7 @@ export class EmployeeService {
     });
 
     return this.http.post<Employee[]>(
-      `http://127.0.0.1:4000/api/employee`,
+      `${environment.domain}/employees`,
       employee,
       { headers }
     );
@@ -63,7 +65,7 @@ export class EmployeeService {
     });
 
     return this.http.get<Employee[]>(
-      `http://127.0.0.1:4000/api/employee/waiter`,
+      `${environment.domain}/employees/waiters`,
       { headers }
     );
   }
@@ -75,7 +77,7 @@ export class EmployeeService {
     });
 
     return this.http.put(
-      `http://127.0.0.1:8000/api/employees/waiters`,
+      `${environment.domain}/employees/waiters`,
       waiter,
       { headers }
     );

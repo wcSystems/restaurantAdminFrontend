@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { environment } from '../../environments/environment';
 
 import { Role } from '../models/role.model';
 
@@ -16,6 +17,6 @@ export class RoleService {
       Authorization: 'Bearer ' + localStorage.getItem('bearer')
     });
 
-    return this.http.get<Role[]>(`http://127.0.0.1:4000/api/role`, { headers });
+    return this.http.get<Role[]>(`${environment.domain}/roles`, { headers });
   }
 }

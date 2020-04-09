@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Seat } from '../models/seat.model';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +18,7 @@ export class SeatService {
       Authorization: 'Bearer' + localStorage.getItem('bearer')
     });
 
-    return this.http.get<Seat[]>(`http://127.0.0.1:4000/api/seat`, { headers } );
+    return this.http.get<Seat[]>(`${environment.domain}/seats`, { headers } );
   }
 
   createSeat(seat) {
@@ -26,7 +27,7 @@ export class SeatService {
       Authorization: 'Bearer' + localStorage.getItem('bearer')
     });
 
-    return this.http.post<Seat[]>(`http://127.0.0.1:4000/api/seat`, seat, { headers } );
+    return this.http.post<Seat[]>(`${environment.domain}/seats`, seat, { headers } );
   }
 
   updateSeat(seat) {
@@ -35,7 +36,7 @@ export class SeatService {
       Authorization: 'Bearer' + localStorage.getItem('bearer')
     });
 
-    return this.http.put<Seat[]>(`http://127.0.0.1:4000/api/seat`, seat, { headers } );
+    return this.http.put<Seat[]>(`${environment.domain}/seats`, seat, { headers } );
   }
 
 }

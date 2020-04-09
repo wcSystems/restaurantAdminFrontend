@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { User } from '../models/user.model';
 import { ToastrService } from 'ngx-toastr';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,7 @@ export class UserService {
       Authorization: 'Bearer ' + localStorage.getItem('bearer')
     });
 
-    return this.http.get<User[]>(`http://127.0.0.1:4000/api/user`, { headers });
+    return this.http.get<User[]>(`${environment.domain}/users`, { headers });
   }
 
   getUser(id: string) {
@@ -24,7 +25,7 @@ export class UserService {
       Authorization: 'Bearer ' + localStorage.getItem('bearer')
     });
 
-    return this.http.get<User>(`http://127.0.0.1:4000/api/user/${id}`, {
+    return this.http.get<User>(`${environment.domain}/users/${id}`, {
       headers
     });
   }
@@ -35,7 +36,7 @@ export class UserService {
       Authorization: 'Bearer ' + localStorage.getItem('bearer')
     });
     return this.http.patch(
-      `http://127.0.0.1:4000/api/user/${id}`,
+      `${environment.domain}/users/${id}`,
       { id },
       { headers }
     );
@@ -43,7 +44,7 @@ export class UserService {
 
   postLogin(userLogin: Partial<User>) {
     return this.http.post<User[]>(
-      `http://127.0.0.1:4000/api/user/login`,
+      `${environment.domain}/users/login`,
       userLogin
     );
   }
@@ -67,7 +68,7 @@ export class UserService {
     formData.append('role_id', user.role_id);
     formData.append('password', user.password);
 
-    return this.http.post<User[]>(`http://127.0.0.1:4000/api/user`, formData , {
+    return this.http.post<User[]>(`${environment.domain}/users`, formData , {
       headers
     });
   }
@@ -93,7 +94,7 @@ export class UserService {
     formData.append('status', user.status);
     formData.append('img_profile', user.img_profile);
  
-    return this.http.put<User[]>(`http://127.0.0.1:4000/api/user`, formData, {
+    return this.http.put<User[]>(`${environment.domain}/users`, formData, {
       headers
     });
   }
