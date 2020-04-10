@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  domain: 'localhost'
+  domain: 'https://restaurantadminbackend.herokuapp.com'
 };
 
 /*
