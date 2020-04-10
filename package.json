@@ -4,6 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "git": "ng build --prod --base-href https://wcsystems.github.io/restaurantAdminFrontend/ && ngh --dir=dist/browser",
     "serve:boost": "ng serve --source-map=false",
     "build": "ng build",
     "test": "ng test",

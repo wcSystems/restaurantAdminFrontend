@@ -50,6 +50,8 @@ export class LoginComponent implements OnInit {
       if (res.error === 1) {
         this.toastr.error('Usuario o Contraseña Erronea', 'Error');
       }
+
+      console.log('resLogin', res)
     });
   }
 }
